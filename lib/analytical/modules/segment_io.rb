@@ -39,9 +39,9 @@ module Analytical
       end
 
       def identify(id, *args)
-        name = args.shift || {}
+        user = args.shift || {}
         data = args || {}
-        "seg.identify(\"#{name}\", #{data.to_a});"
+        "seg.identify(\"#{user[:email]}\", #{data.to_a});"
       end
 
       def event(name, *args)

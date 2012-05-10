@@ -38,7 +38,7 @@ module Analytical
         end
       end
 
-      def identify(id, args)
+      def segment_identify(id, args)
         email_array = args.shift || {}
         email = email_array[1]
         data = args || {}

@@ -38,10 +38,12 @@ module Analytical
         end
       end
 
-      def identify(id, *args)
-        email = args.shift[:email]
-        data = args[0] || {}
+      def identify(id, args)
+        email_array = args.shift || {}
+        email = email_array[1]
+        data = args || {}
         "seg.identify(\"#{email}\", #{data.to_json});"
+
       end
 
       def event(name, *args)

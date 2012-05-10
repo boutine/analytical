@@ -17,8 +17,7 @@ describe "Analytical::Modules::SegmentIo" do
   describe '#identify' do
     it 'should return a js string' do
       @api = Analytical::Modules::SegmentIo.new :parent=>@parent, :js_url_key=>'abcdef'
-      @api.identify('id', {:email => 'test@test.com'}, {:attribute_1 => "Some Value", :attribute_2 => "Some Other Value"}).should ==
-      "seg.identify(\"test@test.com\", {\"attribute_1\":\"Some Value\",\"attribute_2\":\"Some Other Value\"});"
+      @api.identify('id', { :email => 'test@test.com', :attribute_1 => "Some Value", :attribute_2 => "Some Other Value"} ).should == "seg.identify(\"test@test.com\", {\"attribute_1\":\"Some Value\",\"attribute_2\":\"Some Other Value\"});"
     end
   end
   describe '#track' do
